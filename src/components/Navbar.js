@@ -19,7 +19,7 @@ const pages1 = ['اتصل بنا', 'من نحن']; // Pages
 const settings = ['Login', 'Register']; // User settings
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [ setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const navigate = useNavigate();
