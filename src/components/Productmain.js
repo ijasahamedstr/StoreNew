@@ -65,16 +65,16 @@ function EcommerceProductListing() {
         {/* Section Header */}
         <Box sx={{ background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)', color: '#fff', padding: 2, borderRadius: 1 }} mb={3}>
           <Box display="flex" justifyContent="space-between" alignItems="center" width="100%">
-            <Typography variant="h4" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: { xs: '1.2rem', sm: '4rem' }, flex: 1, textAlign: 'center' }}>
+            <Typography variant="h4" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: { xs: '1.5rem', sm: '2rem', md: '4rem' }, flex: 1, textAlign: 'center' }}>
               أقسامنا
             </Typography>
           </Box>
         </Box>
 
         {/* Buttons Grid */}
-        <Grid container spacing={2} justifyContent="center" sx={{ marginBottom: '180px', marginLeft:'50px', paddingTop:'50px' }}>
+        <Grid container spacing={2} justifyContent="center" sx={{ marginBottom: '180px', paddingTop: '50px' }}>
         {buttonData.map(({ label, path }) => (
-          <Grid item xs={6} sm={6} md={6} lg={6} key={label} sx={{ pt: 3 }}> {/* Padding for each item */}
+          <Grid item xs={6} sm={6} md={6} key={label} sx={{ pt: 3 }}> {/* 6 for each button to make 2 buttons per row */}
             <Button
               component={Link}
               to={path}
@@ -85,17 +85,15 @@ function EcommerceProductListing() {
                 color: 'white',
                 display: 'block',
                 fontFamily: 'Noto Kufi Arabic',
-                fontSize: { xs: '12px', sm: '15px', md: '70px' }, // Adjusted font size for md
+                fontSize: { xs: '17px', sm: '20px', md: '70px' },
                 backgroundColor: location.pathname === path ? '#06f9f3' : 'transparent',
                 '&:hover': { backgroundColor: '#444' },
                 borderRadius: '50px',
                 padding: '8px 14px',
                 background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)',
                 textAlign: 'center',
-                paddingLeft: '50px',
-                paddingRight: '50px',
                 mb: 3,
-                width: '80%',
+                width: '100%',
               }}
             >
               {label}
@@ -104,10 +102,11 @@ function EcommerceProductListing() {
         ))}
       </Grid>
 
+
         {/* Product Cards Section */}
         <Grid container spacing={3} sx={{ marginBottom: '100px' }}>
           {products.map((product, index) => (
-            <Grid item xs={index === 0 ? 12 : 4} sm={index === 0 ? 12 : 4} md={index === 0 ? 12 : 4} key={index}>
+            <Grid item xs={index === 0 ? 12 : 12} sm={index === 0 ? 12 : 6} md={index === 0 ? 12 : 4} lg={index === 0 ? 12 : 4} key={index}>
               <Card
                 sx={{
                   transition: '0.3s',
@@ -119,9 +118,8 @@ function EcommerceProductListing() {
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   color: 'white',
-                  marginBottom: '100px',
-                  // Make the first card full width and larger height
-                  height: index === 0 ? '500px' : 'auto', // Set first card height to 500px
+                  height: index === 0 ? '500px' : 'auto',
+                  minHeight: '300px',
                 }}
               >
                 <Box display="flex" justifyContent="space-between" p={2}>
@@ -147,7 +145,7 @@ function EcommerceProductListing() {
                         '&:hover': { background: '#115293' },
                         padding: { xs: '6px 12px', sm: '8px 16px' },
                         fontSize: { xs: '0.875rem', sm: '1rem' },
-                        marginTop:'50px'
+                        marginTop: '50px',
                       }}
                       fullWidth
                       style={{ fontFamily: 'Noto Kufi Arabic, sans-serif' }}
