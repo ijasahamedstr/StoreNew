@@ -12,7 +12,7 @@ export default function Donations() {
   return (
     <div 
       style={{
-        minHeight: '100vh',
+        minHeight: '75vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center', // Center vertically within the container
@@ -20,17 +20,16 @@ export default function Donations() {
         direction: 'rtl',  // Apply RTL direction here
         marginTop: '50px',
         fontFamily: 'Noto Sans Arabic', // Applied globally to the container
-        padding: '0 10px', // Added padding for better responsiveness
       }}
     >
       {/* Outer container with max-width similar to xl */}
-      <div style={{ width: '100%', maxWidth: '1200px', padding: '0 20px', textAlign: 'center' }}>
+      <div style={{ width: '100%' }}>
         <ul 
           style={{
             listStyleType: 'none',
             paddingRight: '20px',
             marginBottom: '10px',
-            fontSize: 'clamp(16px, 5vw, 50px)',  // Responsive font size using clamp
+            fontSize: '50px',  // Large font size for each list item
             color: '#0d8f75',
             display: 'flex',
             flexDirection: 'column',  // Stack items vertically
@@ -44,7 +43,7 @@ export default function Donations() {
             <li 
               key={index} 
               style={{
-                marginBottom: '10px', // Margin between list items
+                marginBottom: '20px', // Margin between list items
                 fontFamily: 'Noto Sans Arabic', // Apply Arabic font to each list item
                 textAlign: 'center',  // Ensure text is centered inside each list item
                 width: '100%',  // Ensure full width of list item
@@ -58,18 +57,18 @@ export default function Donations() {
                 to={paths[index]}  // Using the correct path for each button
                 variant="contained"
                 sx={{
-                  my: 0.5,
-                  mx: 1,
+                  my: 2,  // Vertical margin for better spacing
+                  mx: 2,  // Horizontal margin for even spacing between buttons
                   color: 'white',
-                  display: 'block',
                   fontFamily: 'Noto Kufi Arabic', // Font for the button itself
-                  fontSize: { xs: '12px', sm: '15px', md: '18px', lg: '20px' },  // Adjusted responsive font size
+                  fontSize: { xs: '24px', sm: '28px', md: '40px', lg: '48px' },  // Larger font size scaling for large screens
                   backgroundColor: 'transparent', // Default background
                   '&:hover': { backgroundColor: '#444' },
                   borderRadius: '50px',
-                  padding: '6px 14px',
                   background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)',  // Gradient background
-                  width: { xs: '80%', sm: '60%', md: '50%', lg: '40%' },  // Adjust button width based on screen size
+                  width: { xs: '80%', sm: '70%', md: '80%', lg: '60%' },  // Adjust width for large screens
+                  maxWidth: '600px',  // Limit max width for large screens
+                  boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', // Soft shadow for depth effect
                 }}
               >
                 {item} {/* Button Text */}
