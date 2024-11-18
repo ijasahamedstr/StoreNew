@@ -66,8 +66,8 @@ export default function Donations() {
                   '&:hover': { backgroundColor: '#444' },
                   borderRadius: '50px',
                   background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)',  // Gradient background
-                  width: { xs: '80%', sm: '70%', md: '80%', lg: '60%' },  // Adjust width for large screens
-                  maxWidth: '600px',  // Limit max width for large screens
+                  width: '100%',  // Set button width to 100% to span full screen
+                  maxWidth: 'none',  // Remove the max-width limitation
                   boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', // Soft shadow for depth effect
                 }}
               >
