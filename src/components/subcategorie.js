@@ -69,20 +69,18 @@ function Subcategorie() {
           alignItems: 'center', 
           padding: { xs: '10px', sm: '20px' }, 
           textAlign: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent overlay for text visibility
-          backgroundImage: `url(${headerImg})`, // Your dynamic background image source
-          backgroundSize: 'cover', // Ensure the image covers the whole container
-          backgroundPosition: 'center', // Center the image
-          backgroundRepeat: 'no-repeat', // Prevent image from repeating
-          height: '73vh', // Set height to 73% of the viewport height
-          // Optional: Adjust for mobile devices using media queries
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center', 
+          backgroundRepeat: 'no-repeat', 
+          height: '73vh', 
           '@media (max-width: 600px)': {
-            height: '50vh', // Adjust height for smaller screens
-            backgroundSize: 'cover', // Keep background image covering the container
-            backgroundPosition: 'center', // Keep the image centered on smaller screens
+            height: '50vh',
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
           },
-          // Optional: Add a min-height to prevent the section from shrinking too small
-          minHeight: '50vh', 
+          minHeight: '50vh',
+          backgroundImage: `url(${headerImg})`, 
         }}
       >
         <Grid item xs={12} sm={6}>
