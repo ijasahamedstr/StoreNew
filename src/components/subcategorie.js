@@ -15,7 +15,8 @@ import {
 } from "@mui/material";
 import { Link } from 'react-router-dom';
 import '../css/subcategorie.css'; // You can move more styles to this file
-import headerImg from "../assets/FinalWebFontcopy.jpg";
+import headerImg from "../assets/banner-writing.jpg";
+import backgroundImg from "../assets/FinalWeb.jpg";
 
 function Subcategorie() {
   const products = [
@@ -54,21 +55,56 @@ function Subcategorie() {
       style={{ 
         width: '100%', 
         margin: '0 auto', 
-        backgroundImage: `url(${headerImg})`, 
+        // backgroundImage: `url(${headerImg})`, 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
-        paddingTop: '300px' 
+        paddingBottom: '10px'  // Added bottom padding for spacing
       }}
     >
-      <img
-        src="https://ehsan.sa/static/images/header-img.svg"
-        alt="Header"
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-      />
-      <Container maxWidth="xl" sx={{ padding: 3 }} style={{ direction: 'rtl', marginTop: '150px' }}>
-        <Grid container spacing={4}> {/* Increased spacing here */}
+      {/* Hero Section */}
+      <Grid 
+        container 
+        spacing={2} 
+        sx={{ 
+          position: 'relative', 
+          alignItems: 'center', 
+          padding: { xs: '10px', sm: '20px' }, 
+          textAlign: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent overlay for text visibility
+          backgroundImage: `url(${headerImg})`, // Your dynamic background image source
+          backgroundSize: 'cover', // Ensure the image covers the whole container
+          backgroundPosition: 'center', // Center the image
+          backgroundRepeat: 'no-repeat', // Prevent image from repeating
+          height: '73vh', // Set height to 73% of the viewport height
+          // Optional: Adjust for mobile devices using media queries
+          '@media (max-width: 600px)': {
+            height: '50vh', // Adjust height for smaller screens
+            backgroundSize: 'cover', // Keep background image covering the container
+            backgroundPosition: 'center', // Keep the image centered on smaller screens
+          },
+          // Optional: Add a min-height to prevent the section from shrinking too small
+          minHeight: '50vh', 
+        }}
+      >
+        <Grid item xs={12} sm={6}>
+          <img 
+            src="https://ehsan.sa/static/images/header-img.svg" 
+            alt="Hero" 
+            style={{ 
+              width: '100%', 
+              maxHeight: '400px', 
+              objectFit: 'cover', 
+              borderRadius: '10px',
+            }} 
+          />
+        </Grid>
+      </Grid>
+
+      {/* Product Grid Section */}
+      <Container maxWidth="xl" sx={{ padding: 3 }} style={{ direction: 'rtl', marginTop: '30px' }}>
+        <Grid container spacing={4}>
           {currentProducts.map(({ title, img, username, profileImg }, index) => (
-            <Grid item xs={4} sm={4} md={4} lg={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
               <Card
                 sx={{
                   transition: '0.3s',
@@ -77,17 +113,24 @@ function Subcategorie() {
                     transform: 'scale(1.02)',
                   },
                   borderRadius: 2,
-                  marginBottom: 3, // Added bottom margin for vertical spacing
+                  marginBottom: 3,
                 }}
               >
                 <Box display="flex" justifyContent="space-between" p={2}>
-                  <Typography variant="h6" component="span" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: '0.9rem' }}>
+                  <Typography variant="h6" component="span" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: '1rem' }}>
                     تأثيث منازل المتعففين
                   </Typography>
                   <Badge
-                    badgeContent={0} // Fallback for undefined combo
+                    badgeContent={0}
                     color="info"
-                    sx={{ borderRadius: "50%", width: 35, height: 35, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    sx={{
+                      borderRadius: "50%",
+                      width: 35,
+                      height: 35,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
                   />
                 </Box>
                 <CardMedia
@@ -95,7 +138,13 @@ function Subcategorie() {
                   image={img}
                   alt={title}
                   onClick={() => handleImageClick(img)}
-                  sx={{ height: { xs: 150, sm: 200 }, objectFit: "cover", borderTopLeftRadius: 2, borderTopRightRadius: 2, cursor: 'pointer' }}
+                  sx={{
+                    height: { xs: 150, sm: 200 },
+                    objectFit: "cover",
+                    borderTopLeftRadius: 2,
+                    borderTopRightRadius: 2,
+                    cursor: 'pointer',
+                  }}
                   loading="lazy"
                   role="button"
                   tabIndex="0"
@@ -114,7 +163,7 @@ function Subcategorie() {
                       boxShadow: 2,
                     }}
                   />
-                  <Typography variant="body2" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif' }}>
+                  <Typography variant="body2" sx={{ fontFamily: 'Noto Kufi Arabic, sans-serif', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
                     {username}
                   </Typography>
                 </Box>

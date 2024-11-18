@@ -17,7 +17,6 @@ import Subcategorie from './components/subcategorie';
 import Userview from './components/userview';
 import Registration from './components/Registration';
 import OTPlogin from './components/OTP';
-import Motordisability from './components/Motordisability';
 import Medicine from './components/categories/medicine';
 import EncyclopediaofDisability from './components/categories/Encyclopedia-of-Disability';
 import Courses from './components/categories/Courses';
@@ -28,6 +27,7 @@ import Visualimpairment from './components/categories/Visual-impairment';
 import Autism from './components/categories/Autism';
 import Learningdifficulties from './components/categories/Learning-difficulties';
 import Mentaldisability from './components/categories/Mental-disability';
+import Motordisability from './components/categories/Motordisability';
 
 const theme = createTheme({
   typography: {
