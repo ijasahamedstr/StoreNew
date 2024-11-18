@@ -16,7 +16,6 @@ import {
 import { Link } from 'react-router-dom';
 import '../css/subcategorie.css'; // You can move more styles to this file
 import headerImg from "../assets/banner-writing.jpg";
-import backgroundImg from "../assets/FinalWeb.jpg";
 
 function Subcategorie() {
   const products = [
