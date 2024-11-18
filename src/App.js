@@ -27,6 +27,7 @@ import Hearingdisability from './components/categories/Hearing-disability';
 import Visualimpairment from './components/categories/Visual-impairment';
 import Autism from './components/categories/Autism';
 import Learningdifficulties from './components/categories/Learning-difficulties';
+import Mentaldisability from './components/categories/Mental-disability';
 
 const theme = createTheme({
   typography: {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/Hearing-disability" element={<Hearingdisability/>} />
         <Route path="/Visual-impairment" element={<Visualimpairment/>} />
         <Route path="/Autism" element={<Autism/>} />
+        <Route path="/Mental-disability" element={<Mentaldisability/>} />
         <Route path="/Learning-difficulties" element={<Learningdifficulties/>} />
         <Route path="/categories/medicine" element={<Medicine/>} />
         <Route path="/categories/Encyclopedia-of-Disability" element={<EncyclopediaofDisability/>} />

@@ -1,79 +1,78 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { Button } from '@mui/material'; // Import Button from Material-UI
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 export default function Hearingdisability() {
-  // List of items to display in the unordered list
   const items = ['مقالات', 'طب', 'رياضة وترفية', 'ارشادات وتأهيل'];
-  
-  // Define paths for each item (you can customize these paths)
   const paths = ['/path1', '/path2', '/path3', '/path4'];
 
   return (
-    <div 
+    <div
       style={{
-        minHeight: '100vh',
+        minHeight: '75vh',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        direction: 'rtl',  // Apply RTL direction here
+        direction: 'rtl', // Right-to-left text direction
         marginTop: '50px',
-        fontFamily: 'Noto Sans Arabic', // Applied globally to the container
+        fontFamily: 'Noto Sans Arabic', // Set global font
+        marginLeft:'20px'
       }}
     >
-      {/* Outer container with max-width similar to xl */}
-      <div style={{width: '100%', padding: '0 20px',paddingRight:'100px' }}>
-          <ul 
+      <div
+        style={{
+          width: '100%',
+          padding: '0 20px',
+        }}
+      >
+        <div
           style={{
-            listStyleType: 'disc', 
-            paddingRight: '20px', 
-            marginBottom: '10px', 
-            fontSize: '90px',  // Large font size for each list item
-            color: '#0d8f75',
             display: 'flex',
-            flexDirection: 'column',  // Make sure buttons stack vertically
-            alignItems: 'center',  // Center align items
-            justifyContent: 'center', // Center alignment vertically
-            width: '100%',  // Make sure the list takes the full width
+            flexDirection: 'column', // Stack buttons vertically
+            alignItems: 'center', // Center buttons
+            justifyContent: 'center', 
             margin: 0, // Remove default margin
-            
+            color: '#0d8f75',
+            listStyleType: 'none', // Remove default list styles
+            padding: 0,
           }}
         >
           {items.map((item, index) => (
-            <li 
-              key={index} 
+            <div
+              key={index}
               style={{
-                marginBottom: '10px', // Margin between list items
-                fontFamily: 'Noto Sans Arabic', // Apply Arabic font to each list item
-                textAlign: 'center',  // Ensure text is centered inside each list item
-                width: '100%',  // Make sure list items take full width of their container
+                marginBottom: '15px', // Increase space between buttons
+                textAlign: 'center', // Ensure buttons are centered
+                width: '100%', // Make button container take full width
               }}
             >
-              {/* Material-UI Button as Link */}
               <Button
                 component={Link}
-                to={paths[index]}  // Using the correct path for each button
+                to={paths[index]} // Correct path for each button
                 variant="contained"
                 sx={{
-                  my: 0.5,
-                  mx: 1,
+                  my: 1, // Vertical margin
+                  mx: 2, // Horizontal margin
                   color: 'white',
                   display: 'block',
-                  fontFamily: 'Noto Kufi Arabic', // Font for the button itself
-                  fontSize: { xs: '12px', sm: '15px', md: '100px' },  // Responsive font size
-                  backgroundColor: 'transparent', // Default background
-                  '&:hover': { backgroundColor: '#444' },
-                  borderRadius: '50px',
-                  padding: '6px 14px',
-                  background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)',  // Gradient background
-                  width: { xs: '50%', sm: '50%', md: '50%', lg: '50%' },  // Width remains 50% for all screen sizes
+                  fontFamily: 'Noto Kufi Arabic', // Specific font for buttons
+                  fontSize: { xs: '18px', sm: '20px', md: '24px', lg: '60px' },
+                  backgroundColor: 'transparent',
+                  '&:hover': {
+                    backgroundColor: '#444', // Hover effect
+                  },
+                  borderRadius: '50px', // Rounded button corners
+                  padding: { xs: '12px 20px', sm: '14px 30px', md: '20px 40px' }, // Padding per size
+                  background: 'linear-gradient(270deg, #0d8f75 20%, #214570 105%)',
+                  width: '100%', // Button takes full width
+                  maxWidth: '1000px', // Prevent large button sizes on wide screens
                 }}
               >
-                {item} {/* Button Text */}
+                {item}
               </Button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
